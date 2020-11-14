@@ -27,8 +27,7 @@ class AplocantRequest extends FormRequest
             'name'=>'required',
             'surname'=>'required',
             'position'=>'required',
-            'phone'=>'required',
-            'is_hired'=>'required'
+            'phone'=>'required'
         ];
     }
 }

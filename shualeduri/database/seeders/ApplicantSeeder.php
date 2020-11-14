@@ -19,7 +19,6 @@ class ApplicantSeeder extends Seeder
             'surname' => Str::random(10),
             'position' => Str::random(10),
             'phone'=> 1,
-            'is_hired' => 2
         ]);
     }
 }
