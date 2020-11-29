@@ -14,11 +14,33 @@
                                     <li>username-{{$applicant->surname}},</li>
                                     <li>position-{{$applicant->position}},</li>
                                     <li>phone-{{$applicant->phone}},</li>
-                                    @if($applicant->is_hired)
-                                    <li>is_hired-hired,</li>
-                                    @else
-                                        <li>is_hired-not_hired,</li>
-                                    @endif
+{{--                                    @if($applicant->is_hired)--}}
+{{--                                    <li>is_hired-hired,</li>--}}
+{{--                                    @else--}}
+{{--                                        <li>is_hired-not_hired,</li>--}}
+{{--                                    @endif--}}
+                                        @if($applicant->is_hired)
+                                            <div class="ml-4 text-lg leading-7 font-semibold">
+
+                                                <form method="post" action="{{route('hired',$applicant->id)}}">
+
+                                                    @csrf
+                                                    <button type="submit" class="fa fa-trash">
+                                                        <li>is_hired-აყვანილია</li>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        @else
+                                            <div class="ml-4 text-lg leading-7 font-semibold">
+
+                                                <form method="post" action="{{route('hired',$applicant->id)}}">
+
+                                                    @csrf
+                                                    <button type="submit" class="fa fa-trash">
+                                                        <li>is_hired-აყვანა</li>                                                    </button>
+                                                </form>
+                                            </div>
+                                        @endif
                                 </ul>
                             </div>
                             <div class="ml-4 text-lg leading-7 font-semibold">

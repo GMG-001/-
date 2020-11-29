@@ -20,3 +20,4 @@ Route::get('/',[\App\Http\Controllers\ApplicantController::class, 'index']);
 Route::get('/{applicant}', [\App\Http\Controllers\ApplicantController::class, 'show'])->name('applicant.show');
 Route::get('/{applicant}/edit', [\App\Http\Controllers\ApplicantController::class, 'edit'])->name('applicant.edit');
 Route::put('/{applicant}/update', [\App\Http\Controllers\ApplicantController::class, 'update'])->name('applicant.update');
+Route::post('/posts/{applicant}/hired', [\App\Http\Controllers\ApplicantController::class, 'hired'])->name('hired');

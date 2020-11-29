@@ -32,5 +32,16 @@ class ApplicantController extends Controller
     $applicant = Applicant::findOrFail($id);
     $applicant->update($request->all());
     return redirect()->back();
-}
+    }
+    public function hired(Applicant $applicant){
+
+        if ($applicant->is_hired==false){
+            $applicant->is_hired=true;
+
+        }else{
+            $applicant->is_hired=false;
+        }
+        $applicant->save();
+        return redirect()->back();
+    }
 }
